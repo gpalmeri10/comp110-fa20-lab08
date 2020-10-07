@@ -24,7 +24,7 @@ def get_eq_locs(filename):
     eq_data_file = open(filename, 'r')
     eq_data_file.readline().split(",")
 
-    for line in eq_data_file
+    for line in eq_data_file:
         vals = line.split(",")
         latitudes.append(vals[1])
         longitudes.append(vals[2])
