@@ -22,13 +22,20 @@ def get_eq_locs(filename):
     longitudes = []
 
     eq_data_file = open(filename, 'r')
+    eq_data_file.readline().split(",")
+
+    for line in eq_data_file
+        vals = line.split(",")
+        latitudes.append(vals[1])
+        longitudes.append(vals[2])
 
     # To Do: Loop through the lines, adding each latitude and longitude to the lists
     # initialized above.
     # Don't forget to handle the header line before the loop.
 
 
-    return None # Replace this with code that returns a tuple of latitudes and longitudes
+
+    return (latitudes, longitudes) # Replace this with code that returns a tuple of latitudes and longitudes
 
 
 def main():
