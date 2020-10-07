@@ -22,17 +22,16 @@ def get_eq_locs(filename):
     longitudes = []
 
     eq_data_file = open(filename, 'r')
-    eq_data_file.readline().split(",")
+    eq_data_file.readline()
 
     for line in eq_data_file:
         vals = line.split(",")
-        latitudes.append(vals[1])
-        longitudes.append(vals[2])
+        latitudes.append(float(vals[1]))
+        longitudes.append(float(vals[2]))
 
     # To Do: Loop through the lines, adding each latitude and longitude to the lists
     # initialized above.
     # Don't forget to handle the header line before the loop.
-
 
 
     return (latitudes, longitudes) # Replace this with code that returns a tuple of latitudes and longitudes
@@ -47,7 +46,8 @@ def main():
     # graph these.
     # The filename you should use is the full dataset (usgs_earthquakes_last_week.csv)
 
-
+    (lat, long) = get_eq_locs("usgs_earthquakes_last_week.csv")
+    pp.scatter(long,lat)
     # Set the image background to be a world-map
     # Don't change anything after this point.
     img = imread("world-map-full.jpg")
